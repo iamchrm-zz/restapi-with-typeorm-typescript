@@ -8,4 +8,6 @@ import { userRouter } from "./routes/user.routes";
 
 export const app = express();
 app.use(morgan("dev"));
+app.use(cors());
+app.use(express.json());
 app.use(userRouter);
