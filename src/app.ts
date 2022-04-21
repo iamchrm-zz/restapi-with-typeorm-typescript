@@ -4,10 +4,12 @@ import express from "express";
 import morgan from "morgan";
 //cors is used to allow cross origin requests
 import cors from "cors";
-import { userRouter } from "./routes/user.routes";
+// import { userRouter } from "./routes/user.routes";
+import { productRouter } from "./routes/product.routes";
+import { categoryRouter } from "./routes/category.routes";
 
 export const app = express();
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json());
-app.use(userRouter);
+app.use(productRouter, categoryRouter);
