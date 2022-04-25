@@ -4,7 +4,7 @@ import { Product } from "./entities/Product";
 
 //config of database
 export const AppDataSource = new DataSource({
-  type: process.env.TYPE as any,
+  type: "mysql",
   host: process.env.HOST as any,
   username: process.env.USERNAME as any,
   password: process.env.PASSWORD as any,
