@@ -14,15 +14,3 @@ export const AppDataSource = new DataSource({
   logging: true,
   synchronize: false,
 });
-
-// export const AppDataSource = new DataSource({
-//   type: "mysql",
-//   host: "localhost",
-//   username: "root",
-//   password: "",
-//   port: 3306,
-//   database: "javaapp",
-//   entities: [User],
-//   logging: true,
-//   synchronize: true,
-// });

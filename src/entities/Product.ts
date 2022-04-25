@@ -13,7 +13,7 @@ import { productInterface } from "./productInterface";
 
 // @Entity() is a decorator that tells TypeORM that this class is a table in the database
 @Entity("product")
-export class Product extends BaseEntity {
+export class Product extends BaseEntity implements productInterface {
   // @PrimaryGeneratedColumn() is a decorator that tells TypeORM that this property is a primary key in the database
   @PrimaryGeneratedColumn({
     type: "int",
