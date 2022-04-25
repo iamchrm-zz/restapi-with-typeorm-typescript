@@ -4,13 +4,13 @@ import { Product } from "./entities/Product";
 
 //config of database
 export const AppDataSource = new DataSource({
-  type: "mysql",
-  host: "mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com",
-  username: "bsale_test",
-  password: "bsale_test",
-  port: 3306,
-  database: "bsale_test",
-  entities: [Product, Category],
-  logging: true,
-  synchronize: false,
+  type: process.env.TYPE as any,
+  host: process.env.HOST as any,
+  username: process.env.USERNAME as any,
+  password: process.env.PASSWORD as any,
+  port: process.env.DATABASE_PORT as any,
+  database: process.env.DATABASE as any,
+  entities: process.env.ENTITIES as any,
+  logging: process.env.LOGGING as any,
+  synchronize: process.env.SYNCHRONIZE as any,
 });
