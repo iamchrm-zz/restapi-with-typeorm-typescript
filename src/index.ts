@@ -7,7 +7,7 @@ const main = async () => {
     await AppDataSource.initialize();
     console.log(`Database connected successfully on port ${process.env.PORT}`);
 
-    app.listen(process.env.PORT_APP, () => {
+    app.listen(process.env.PORT_APP || 4000, () => {
       console.log(`Server is running on port ${process.env.PORT_APP}`);
     });
   } catch (error) {
