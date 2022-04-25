@@ -9,8 +9,8 @@ export const AppDataSource = new DataSource({
   username: process.env.USERNAME as any,
   password: process.env.PASSWORD as any,
   port: process.env.DATABASE_PORT as any,
-  database: process.env.DATABASE as any,
+  database: process.env.DATABASE,
   entities: process.env.ENTITIES as any,
-  logging: process.env.LOGGING as any,
-  synchronize: process.env.SYNCHRONIZE as any,
+  logging: true,
+  synchronize: false,
 });
