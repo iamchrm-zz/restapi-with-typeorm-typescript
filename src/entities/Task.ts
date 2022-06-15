@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "./User";
 
 // TODO: Add category to task
 @Entity("task")
@@ -15,5 +16,8 @@ export class Task extends BaseEntity {
     updateAt: Date;
     @Column({ nullable: false })
     status: boolean;
+    @ManyToOne(() => User, (user) => user.task, { onDelete: 'CASCADE', onUpdate: 'CASCADE' })
+    @JoinColumn({ name: "user" })
+    user: User;
 
 }
