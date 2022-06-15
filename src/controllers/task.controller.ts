@@ -1,18 +1,20 @@
 import express from "express";
-import { Category } from "../entities/Category";
-import { Product } from "../entities/Product";
+import { Task } from "../entities/Task";
 
-export const getProducts = async (
+export const getTask = async (
   req: express.Request,
   res: express.Response
 ) => {
   try {
-    const product = await Product.find({
-      relations: ["category"],
-    });
-    !product
-      ? res.status(404).json({ message: "No products found" })
-      : res.json(product);
+    const task = await Task.find();
+    setTimeout(() => {
+      !task
+      ? res.status(404).json({ message: "No tasks found" })
+      : res.json(task);
+    }, 3000);
+   
+      
+    
   } catch (error) {
     console.log(error);
     //check if error is instance of Error
@@ -20,5 +22,7 @@ export const getProducts = async (
       //send a json response with the error message
       return res.status(500).json({ message: error.message });
     }
+    
   }
-};
+}
+
